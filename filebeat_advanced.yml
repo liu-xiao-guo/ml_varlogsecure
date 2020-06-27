@@ -1,0 +1,13 @@
+filebeat.inputs:
+- type: log
+  paths:
+    - /Users/liuxg/data/ml_data/advanced/secure.log
+  
+output.elasticsearch:
+  hosts: ["http://localhost:9200"]
+  index: varlogsecure
+  pipeline: varlogsecure
+ 
+setup.ilm.enabled: false
+setup.template.name: varlogsecure
+setup.template.pattern: varlogsecure
